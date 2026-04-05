@@ -1,0 +1,68 @@
+:root {
+    --gold: #d4af37;
+    --gold-dark: #b8860b;
+    --dark: #050a0f;
+    --dark-accent: #0f1620;
+    --white: #ffffff;
+    --grey: #a1a1a1;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Montserrat', sans-serif; background: var(--dark); color: var(--white); scroll-behavior: smooth; overflow-x: hidden; }
+
+.container { max-width: 1250px; margin: 0 auto; padding: 0 25px; }
+
+/* Navbar */
+.navbar { position: fixed; width: 100%; top: 0; padding: 25px 0; transition: 0.4s; z-index: 1000; }
+.navbar.scrolled { background: rgba(5, 10, 15, 0.95); padding: 15px 0; border-bottom: 1px solid rgba(212, 175, 55, 0.3); }
+.logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; letter-spacing: 2px; }
+.logo span { color: var(--gold); }
+.nav-links { list-style: none; display: flex; align-items: center; }
+.nav-links li { margin-left: 35px; }
+.nav-links a { text-decoration: none; color: var(--white); font-weight: 500; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+.nav-links a:hover { color: var(--gold); }
+
+/* Hero */
+.hero { height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; position: relative; background: url('https://images.unsplash.com/photo-1541339907198-e08756dee81c?q=80&w=2070') center/cover; }
+.hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); }
+.hero-content { position: relative; z-index: 2; }
+.hero-tag { color: var(--gold); text-transform: uppercase; letter-spacing: 4px; font-weight: 800; display: block; margin-bottom: 20px; }
+.hero h1 { font-family: 'Playfair Display', serif; font-size: 4.5rem; line-height: 1.2; margin-bottom: 30px; }
+.hero h1 span { color: var(--gold); font-style: italic; }
+.hero p { max-width: 800px; margin: 0 auto 40px; font-size: 1.2rem; color: var(--grey); line-height: 1.8; }
+
+.btn-gold { background: var(--gold); color: black; padding: 18px 40px; text-decoration: none; border-radius: 4px; font-weight: 800; transition: 0.3s; display: inline-block; margin-right: 15px; }
+.btn-white { border: 1px solid var(--white); color: var(--white); padding: 17px 40px; text-decoration: none; border-radius: 4px; font-weight: 800; transition: 0.3s; display: inline-block; }
+.btn-gold:hover { background: var(--white); transform: translateY(-3px); }
+
+/* Pricing Table */
+.pricing { padding: 120px 0; background: var(--dark-accent); }
+.price-wrapper { display: flex; justify-content: center; gap: 40px; margin-top: 60px; flex-wrap: wrap; }
+.price-box { background: var(--dark); padding: 60px 45px; border-radius: 8px; width: 450px; border: 1px solid #222; position: relative; transition: 0.4s; }
+.price-box.premium { border: 2px solid var(--gold); transform: scale(1.05); box-shadow: 0 10px 40px rgba(212, 175, 55, 0.1); }
+.best-value { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--gold); color: black; padding: 5px 25px; font-weight: 900; font-size: 0.8rem; border-radius: 20px; }
+.price-amount { font-size: 3rem; font-weight: 800; margin: 30px 0; color: var(--gold); }
+.price-amount span { font-size: 1rem; color: var(--grey); }
+.features { list-style: none; text-align: left; margin-bottom: 40px; }
+.features li { margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid #1a1a1a; font-size: 0.95rem; }
+.features li.disabled { color: #444; text-decoration: line-through; }
+.btn-gold-full { display: block; width: 100%; text-align: center; background: var(--gold); color: black; padding: 18px; text-decoration: none; font-weight: 800; border-radius: 4px; transition: 0.3s; }
+.btn-outline { display: block; width: 100%; text-align: center; border: 1px solid var(--gold); color: var(--gold); padding: 18px; text-decoration: none; font-weight: 800; border-radius: 4px; }
+
+/* Section Header */
+.section-header h2 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 15px; }
+.section-header.center { text-align: center; }
+.line { width: 80px; height: 4px; background: var(--gold); margin-top: 10px; }
+
+/* Contact Form */
+.contact { padding: 120px 0; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+input, select { width: 100%; background: #111; border: 1px solid #333; padding: 18px; margin-bottom: 20px; color: white; border-radius: 4px; }
+
+footer { padding: 40px; text-align: center; border-top: 1px solid #222; color: var(--grey); font-size: 0.8rem; }
+
+@media (max-width: 900px) {
+    .hero h1 { font-size: 2.5rem; }
+    .price-box { width: 100%; }
+    .contact-grid { grid-template-columns: 1fr; }
+}
